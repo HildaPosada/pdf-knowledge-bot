@@ -1,0 +1,26 @@
+{
+  "name": "PDF Knowledge Bot",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11",
+      "installJupyterlab": true
+    }
+  },
+  "remoteEnv": {
+    "HUGGINGFACEHUB_API_TOKEN": "${{ secrets.HUGGINGFACEHUB_API_TOKEN }}"
+  },
+  "postCreateCommand": "",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
+  "forwardPorts": [8501],
+  "portsAttributes": {
+    "8501": { "label": "Streamlit", "onAutoForward": "openBrowser" }
+  }
+}
